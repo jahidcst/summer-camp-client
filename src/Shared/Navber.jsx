@@ -1,14 +1,16 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Navber = () => {
-    // const { user, logOut } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
     
-    // const handleLogout = () => {
-    //     logOut()
-    //         .then(() => { })
-    //         .catch(error => console.log(error))
-    // }
+    const handleLogout = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
 
 
     const navOptions = <>
@@ -40,7 +42,7 @@ const Navber = () => {
                 </div>
                 <div className="navbar-end">
 
-                    {/* {
+                    {
                         user ?
                             <>
                                 <div className="avatar mr-5 flex gap-4 items-center  tooltip tooltip-left tooltip-neutral" data-tip={user?.displayName}>
@@ -56,7 +58,7 @@ const Navber = () => {
                                     <button className="btn btn-outline text-white btn-sm mr-12"><Link to='/login'>Login</Link></button>
                                 </div>
                             </>
-                    } */}
+                    }
 
                 </div>
             </div>
