@@ -25,7 +25,7 @@ const Navber = () => {
     </>
     return (
         <>
-            <div className="navbar max-w-screen-lg fixed z-10  text-white bg-opacity-25 bg-black">
+            <div className="navbar max-w-screen-lg fixed z-10  text-white  bg-opacity-25 bg-black">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <Link><img className="w-12 ml-5" src="" alt="" /></Link>

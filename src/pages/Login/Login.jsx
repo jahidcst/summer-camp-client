@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaFacebook, FaTwitter } from 'react-icons/fa';
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -42,6 +43,12 @@ const Login = () => {
 
     return (
         <div>
+
+            <Helmet>
+                <title>Bistro Boss | Login</title>
+            </Helmet>
+
+
             <div className="  bg-base-200">
                 <div className="hero-content flex-col">
 
