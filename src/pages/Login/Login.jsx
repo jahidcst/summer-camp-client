@@ -45,7 +45,7 @@ const Login = () => {
         <div>
 
             <Helmet>
-                <title>Bistro Boss | Login</title>
+                <title>Yogastic | Login</title>
             </Helmet>
 
 

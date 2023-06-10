@@ -50,7 +50,7 @@ const SignUp = () => {
         <>
 
             <Helmet>
-                <title>Bistro Boss | Sign Up</title>
+                <title>Yogastic | Sign Up</title>
             </Helmet>
 
 
@@ -101,7 +101,6 @@ const SignUp = () => {
                                     {errors.password?.type === 'required' && <p className="text-error">Password is required</p>}
                                     {errors.password?.type === 'minLength' && <p className="text-error">Password must be 6 characters</p>}
                                     {errors.password?.type === 'pattern' && <p className="text-error">Password must have one uppercase, one lowercase and one spacial character</p>}
-                                    {errors.name && <span className="text-error">Password is required</span>}
 
                                     <label className="label">
                                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>

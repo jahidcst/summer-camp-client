@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-import img from "../assets/icon3.jpg"
+import img from "../assets/yoga.png"
 
 
 const Navber = () => {
@@ -29,12 +29,12 @@ const Navber = () => {
             <div className="navbar max-w-screen-lg fixed z-10  text-white  bg-opacity-25 ">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <Link to='/'><img className="w-24" src={img} alt="" /></Link>
+                        <Link to='/'><img className="w-24 " src={img} alt="" /></Link>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             {navOptions}
                         </ul>
                     </div>
-                    <Link to='/' className="font-bold text-4xl uppercase text-teal-500 mr-">Y<span className="text-purple-800">o</span>gastic</Link>
+                    <Link to='/' className="font-bold text-4xl uppercase text-teal-500">Y<span className="text-purple-800">o</span>gastic</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
