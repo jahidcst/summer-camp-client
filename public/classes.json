@@ -1,45 +1,52 @@
-[
-    {
-        "img": "yoga-class1.jpg",
-        "classname": "Beginner's Yoga",
-        "price": "$15",
-        "teacher": "Jane Smith",
-        "students": 10
-    },
-    {
-        "img": "yoga-class2.jpg",
-        "classname": "Vinyasa Flow",
-        "price": "$20",
-        "teacher": "John Doe",
-        "students": 15
-    },
-    {
-        "img": "yoga-class3.jpg",
+ [
+      {
+        "id": 1,
+        "img": "https://img.freepik.com/free-photo/smiling-people-doing-mermaid-pose-yoga-class_1262-16416.jpg?w=900&t=st=1686497406~exp=1686498006~hmac=0284d64af5e2b28d515bcc550a608afba19cb6954831799ee9eab9d1cb241585",
         "classname": "Hatha Yoga",
-        "price": "$18",
-        "teacher": "Sarah Johnson",
-        "students": 12
-    },
-    {
-        "img": "yoga-class4.jpg",
-        "classname": "Power Yoga",
-        "price": "$22",
-        "teacher": "Michael Brown",
+        "price": 20,
+        "teacher": "John Smith",
+        "students": 10
+      },
+      {
+        "id": 2,
+        "img": "https://img.freepik.com/free-photo/yoga-practice-indoors_1098-21081.jpg?w=900&t=st=1686497464~exp=1686498064~hmac=fcf69cfbbe09e0fba60446bf42b463923bf173216e533b5f82420da95ae8fd04",
+        "classname": "Vinyasa Flow",
+        "price": 18,
+        "teacher": "Jane Doe",
         "students": 8
-    },
-    {
-        "img": "yoga-class5.jpg",
+      },
+      {
+        "id": 3,
+        "img": "https://img.freepik.com/free-photo/group-people-performing-stretching-exercise_1170-208.jpg?w=900&t=st=1686497518~exp=1686498118~hmac=0a938592278de5c2ffba6aa9a61b37f14434dc44dca6d996d7576814352ae300",
+        "classname": "Ashtanga Yoga",
+        "price": 25,
+        "teacher": "David Johnson",
+        "students": 12
+      },
+      {
+        "id": 4,
+        "img": "https://img.freepik.com/free-photo/trainer-assisting-group-people-with-stretching-exercise_1170-187.jpg?w=900&t=st=1686497726~exp=1686498326~hmac=c23e62d13ea8c6c3c0eb611f38f20030fce3b003f4bab26104bd6925645cba58",
         "classname": "Restorative Yoga",
-        "price": "$25",
+        "price": 15,
         "teacher": "Emily Wilson",
         "students": 6
-    },
-    {
-        "img": "yoga-class6.jpg",
+      },
+      {
+        "id": 5,
+        "img": "https://img.freepik.com/free-photo/positive-people-stretching-arms-yoga-class_1262-16384.jpg?w=900&t=st=1686497774~exp=1686498374~hmac=e315e1e4cb54b826178f8ab960bf46144b7cebe6d0e88f9e801733e2a5fd887b",
+        "classname": "Power Yoga",
+        "price": 22,
+        "teacher": "Michael Thompson",
+        "students": 15
+      },
+      {
+        "id": 6,
+        "img": "https://img.freepik.com/free-photo/trainer-assisting-group-people-with-pashimottanasana-exercise_1170-200.jpg?w=900&t=st=1686497257~exp=1686497857~hmac=8ceb9b8f97c5aa2613e70df0f6dc0a2a99524bbdcbb77b190bd46ba5f026cbd6",
         "classname": "Yin Yoga",
-        "price": "$17",
-        "teacher": "David Thompson",
-        "students": 10
-    }
-]
-
+        "price": 16,
+        "teacher": "Sarah Davis",
+        "students": 9
+      }
+    ]
+  
+  

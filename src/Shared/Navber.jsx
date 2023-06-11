@@ -23,7 +23,7 @@ const Navber = () => {
     </>
     return (
         <>
-            <div className="navbar max-w-screen-lg z-10 fixed  text-white  bg-opacity-25 ">
+            <div className="navbar max-w-screen-lg z-10  text-white  bg-opacity-25 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <Link to='/'><img className="w-24 " src={img} alt="" /></Link>
@@ -33,8 +33,8 @@ const Navber = () => {
                     </div>
                     <Link to='/' className="font-bold text-4xl uppercase text-teal-500">Y<span className="text-purple-800">o</span>gastic</Link>
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                <div className="navbar-end hidden lg:flex">
+                    <ul className=" ml-32 gap-4 menu-horizontal px-1">
                         {navOptions}
                     </ul>
                 </div>
@@ -52,7 +52,7 @@ const Navber = () => {
 
                             </> :
                             <>
-                                <div className="mr-10">
+                                <div className="mr-5">
                                     <button className="btn btn-outline text-white btn-sm mr-12"><Link to='/login'>Login</Link></button>
                                 </div>
                             </>
