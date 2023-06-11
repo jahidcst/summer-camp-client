@@ -2,14 +2,14 @@ import { FaCheck} from 'react-icons/fa';
 const Extra = () => {
     return (
         <div className="my-12">
-            <div>
-                <p>WHAT WE OFFER</p>
-                <h2>Our Pricing Plans</h2>
-                <p>Molestiae non recusandae itaque earum rerum hic teneaur a sapiente delectus, rae aut reiciendis officia deserunt mollitia animi omnis dolor</p>
+            <div className='text-center space-y-3'>
+                <p className='text-lg text-purple-400 underline'>WHAT WE OFFER</p>
+                <h2 className='text-5xl font-serif font-medium'>Our Pricing Plans</h2>
+                <p className='text-gray-400'>Molestiae non recusandae itaque earum rerum hic teneaur a sapiente delectus, rae aut reiciendis officia deserunt mollitia animi omnis dolor</p>
             </div>
 
 
-            <div className="flex gap-7 mt-8">
+            <div className="flex gap-6 mt-8">
                 <div className="card card-compact w-96 bg-teal-100 shadow-xl">
                     <figure><img className="" src="https://img.freepik.com/free-photo/woman-practicing-advanced-yoga-by-water_1157-37143.jpg?w=900&t=st=1686466296~exp=1686466896~hmac=3aecadc1977145c32024ed3ea03298e6c6f2dc0ae538583ad60069f50bef27c3" alt="Shoes" /></figure>
                     <div className="card-body text-center text-black mt-5">
