@@ -23,7 +23,7 @@ const Navber = () => {
     </>
     return (
         <>
-            <div className="navbar max-w-screen-lg z-10   text-white  bg-opacity-25 ">
+            <div className="navbar max-w-screen-lg z-10 fixed  text-white  bg-opacity-25 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <Link to='/'><img className="w-24 " src={img} alt="" /></Link>
@@ -47,7 +47,7 @@ const Navber = () => {
                                     <div className="w-11 rounded-full ring">
                                         <img src={user?.photoURL} alt="" />
                                     </div>
-                                    <button className="btn btn-outline btn-error btn-sm mr-12" onClick={handleLogout}>LogOut</button>
+                                    <button className="btn btn-outline btn-error btn-sm " onClick={handleLogout}>LogOut</button>
                                 </div>
 
                             </> :

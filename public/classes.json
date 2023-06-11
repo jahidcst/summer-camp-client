@@ -1,0 +1,45 @@
+[
+    {
+        "img": "yoga-class1.jpg",
+        "classname": "Beginner's Yoga",
+        "price": "$15",
+        "teacher": "Jane Smith",
+        "students": 10
+    },
+    {
+        "img": "yoga-class2.jpg",
+        "classname": "Vinyasa Flow",
+        "price": "$20",
+        "teacher": "John Doe",
+        "students": 15
+    },
+    {
+        "img": "yoga-class3.jpg",
+        "classname": "Hatha Yoga",
+        "price": "$18",
+        "teacher": "Sarah Johnson",
+        "students": 12
+    },
+    {
+        "img": "yoga-class4.jpg",
+        "classname": "Power Yoga",
+        "price": "$22",
+        "teacher": "Michael Brown",
+        "students": 8
+    },
+    {
+        "img": "yoga-class5.jpg",
+        "classname": "Restorative Yoga",
+        "price": "$25",
+        "teacher": "Emily Wilson",
+        "students": 6
+    },
+    {
+        "img": "yoga-class6.jpg",
+        "classname": "Yin Yoga",
+        "price": "$17",
+        "teacher": "David Thompson",
+        "students": 10
+    }
+]
+
