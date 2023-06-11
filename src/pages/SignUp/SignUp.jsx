@@ -4,6 +4,7 @@ import { FaGoogle, FaFacebook, FaTwitter } from 'react-icons/fa';
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 
 
@@ -23,13 +24,20 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 updateUser(result.user, data.name, data.photo)
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'User Created Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 console.log(user)
                 navigate(location?.state?.from.pathname || '/')
             })
-            
+
             .catch(error => console.log(error))
-            reset();
-        
+        reset();
+
     }
 
     const handleGoogle = () => {

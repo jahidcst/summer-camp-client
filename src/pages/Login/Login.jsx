@@ -3,6 +3,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaFacebook, FaTwitter } from 'react-icons/fa';
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 
 
@@ -23,6 +24,13 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Login Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 navigate(location?.state?.from.pathname || '/')
             })
             .catch(error => console.log(error))
