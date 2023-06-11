@@ -20,9 +20,6 @@ const Navber = () => {
         <li className="text-lg font-bold hover:text-green-500"><Link to=''>Classes</Link></li>
         <li className="text-lg font-bold hover:text-green-500"><Link to=''>DashBoard</Link></li>
 
-       
-
-
     </>
     return (
         <>
