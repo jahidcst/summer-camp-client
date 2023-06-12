@@ -33,7 +33,7 @@ const Banner = () => {
                         <p>Duis aute irure dolor in reprehenderit in volurate velit cillum <br /> nulla pariatur nostrud exercitation.</p>
 
                         <div className=''>
-                            <button className="btn btn-primary mr-5">Enroll Now</button>
+                            <button className="btn btn-outline mr-5">Enroll Now</button>
                         </div>
                     </div>
 
@@ -53,7 +53,7 @@ const Banner = () => {
                         <p>Duis aute irure dolor in reprehenderit in volurate velit cillum <br /> nulla pariatur nostrud exercitation.</p>
 
                         <div className=''>
-                            <button className="btn btn-primary mr-5">Enroll Now</button>
+                            <button className="btn btn-outline mr-5">Enroll Now</button>
                         </div>
                     </div>
 
@@ -73,7 +73,7 @@ const Banner = () => {
                         <p>Duis aute irure dolor in reprehenderit in volurate velit cillum <br />nulla pariatur nostrud exercitation.</p>
 
                         <div className=''>
-                            <button className="btn btn-primary mr-5">Enroll Now</button>
+                            <button className="btn btn-outline mr-5">Enroll Now</button>
                         </div>
                     </div>
 

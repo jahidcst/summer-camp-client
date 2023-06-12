@@ -1,13 +1,19 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaGoogle, FaFacebook, FaTwitter } from 'react-icons/fa';
+import { FaGoogle, FaFacebook, FaTwitter, FaRegEyeSlash, FaRegEye } from 'react-icons/fa';
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 
 
 
 const Login = () => {
+    const [passwordType, setPasswordType] = useState("password");
+    const [passwordInput, setPasswordInput] = useState("");
+    const handlePasswordChange = (evnt) => {
+        setPasswordInput(evnt.target.value);
+    }
+
 
     const { signIn, google } = useContext(AuthContext)
 
@@ -37,6 +43,15 @@ const Login = () => {
 
         form.reset();
     }
+
+    const togglePassword = () => {
+        if (passwordType === "password") {
+            setPasswordType("text")
+            return;
+        }
+        setPasswordType("password")
+    }
+
     const handleGoogle = () => {
         google()
             .then(result => {
@@ -57,7 +72,7 @@ const Login = () => {
             </Helmet>
 
 
-            <div className="  bg-base-200">
+            <div className="  bg-base-200" >
                 <div className="hero-content flex-col">
 
                     <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100 ">
@@ -68,18 +83,24 @@ const Login = () => {
                             <form onSubmit={handleLogin}>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Email</span>
+                                        <span className="label-text text-lg">Email</span>
                                     </label>
                                     <input type="text" placeholder="email" name="email" className="input input-bordered" />
                                 </div>
+
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Password</span>
+                                        <span className="label-text text-lg">Password</span>
                                     </label>
-                                    <input type="password" name="password" placeholder="password" className="input input-bordered" />
-                                    <label className="label">
-                                        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                    </label>
+                                    <div className="flex border rounded-md border-slate-600"> 
+                                        <input type={passwordType} name="password" onChange={handlePasswordChange} value={passwordInput} placeholder="password"  className="input w-full"  />
+                                        <div className="">
+                                        <button className="input-md " onClick={togglePassword}>
+                                                {passwordType === "password" ? <FaRegEye></FaRegEye>  : <FaRegEyeSlash></FaRegEyeSlash>  }
+                                            </button>
+                                        </div>
+                                        </div>
+
                                 </div>
                                 <div className="form-control mt-6">
                                     <input className="btn btn-primary" type="submit" value="Login" />
@@ -94,7 +115,7 @@ const Login = () => {
                                     </div>
                                 </div>
                             </form>
-                            <p className="my-4 text-center">New to Toy Land? <Link className="text-blue-600 font-bold" to='/signup'>Sign Up</Link></p>
+                            <p className="my-4 text-center">New to Yogastic? <Link className="text-blue-600 font-bold" to='/signup'>Sign Up</Link></p>
                         </div>
                     </div>
                 </div>

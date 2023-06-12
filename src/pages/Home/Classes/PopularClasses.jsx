@@ -14,7 +14,7 @@ const PopularClasses = () => {
         <div className='my-16'>
             <div className='text-center mb-6 '>
                 <p className=' text-xl font-thin mb-2 text-purple-400 underline uppercase'>Our Popular Classes</p>
-                <h2 className='text-3xl font-serif font-light '>Practice Whereever You Want Whenever You Need
+                <h2 className='text-3xl font-serif font-light '>Practice Whereever You Want Whenever You Need!
                 </h2>
             </div>
 
