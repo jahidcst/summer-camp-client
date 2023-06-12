@@ -19,11 +19,11 @@ const PopularClasses = () => {
             </div>
 
             {
-                <div className="grid md:grid-cols-3 gap-10 ">
+                <div className="grid md:grid-cols-3 sm:grid-cols-1  gap-10 ">
                     {
-                        classes.map(data => <ClassCard
-                            key={data._id}
-                            data={data}
+                        classes.map(classItem => <ClassCard
+                            key={classItem.id}
+                            classItem={classItem}
                         ></ClassCard>)
                     }
                 </div>

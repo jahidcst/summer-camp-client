@@ -1,0 +1,46 @@
+ [
+      {
+        "id": 1,
+        "img": "https://i.ibb.co/KXjQ7tp/Picsart-23-06-02-14-50-12-653.jpg",
+        "classname": "Hatha Yoga",
+        "teachername": "Jahid Hasan",
+        "email": "jahidHasan.com"
+      },
+      {
+        "id": 2,
+        "img": "https://img.freepik.com/free-photo/handsome-businessman-suit-glasses-cross-arms-chest-look_176420-21750.jpg?w=900&t=st=1686549639~exp=1686550239~hmac=2cc495e6c37905a44d91d65b4dbbd77bdd20f570245d5bdaaaa099d9b97a6e91",
+        "classname": "Vinyasa Flow",
+        "teachername": "John Smith",
+        "email": "john.smith@example.com"
+      },
+      {
+        "id": 3,
+        "img": "https://img.freepik.com/free-photo/brunette-business-woman-with-wavy-long-hair-blue-eyes-stands-holding-notebook-hands_197531-343.jpg?w=360&t=st=1686549669~exp=1686550269~hmac=9d1121d42fc55eee848a96f6a8a49d81e4d7713d9d40d8540f1719729b314dc0",
+        "classname": "Ashtanga Yoga",
+        "teachername": "Emily Johnson",
+        "email": "emily.johnson@example.com"
+      },
+      {
+        "id": 4,
+        "img": "https://img.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg?w=900&t=st=1686549620~exp=1686550220~hmac=a515c523673894c0b75242fe28465ffb2ddfd0178f690671221cbb3a4d17e2ce",
+        "classname": "Bikram Yoga",
+        "teachername": "Michael Williams",
+        "email": "williams@example.com"
+      },
+      {
+        "id": 5,
+        "img": "https://img.freepik.com/free-photo/businesswoman-executive-professional-success-concept_53876-137644.jpg?w=900&t=st=1686549809~exp=1686550409~hmac=1830c9ad9c78c2fbd01efa579d78818a76ccf3054e8d8cc81bbb86cfd802165a",
+        "classname": "Kundalini Yoga",
+        "teachername": "Sarah Davis",
+        "email": "sarah.davis@example.com"
+      },
+      {
+        "id": 6,
+        "img": "https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?w=740&t=st=1686549598~exp=1686550198~hmac=cd1db590525d09a04dca65291d6587d2c98fdbe002ba5a2dfb0ee4767bb937ea",
+        "classname": "Yin Yoga",
+        "teachername": "David Brown",
+        "email": "david.brown@example.com"
+      }
+    ]
+  
+  

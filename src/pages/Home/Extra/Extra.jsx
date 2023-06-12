@@ -9,8 +9,8 @@ const Extra = () => {
             </div>
 
 
-            <div className="flex gap-6 mt-8">
-                <div className="card card-compact w-96 bg-teal-100 shadow-xl">
+            <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-3   mt-8">
+                <div className="card card-compact  bg-teal-100 shadow-xl">
                     <figure><img className="" src="https://img.freepik.com/free-photo/woman-practicing-advanced-yoga-by-water_1157-37143.jpg?w=900&t=st=1686466296~exp=1686466896~hmac=3aecadc1977145c32024ed3ea03298e6c6f2dc0ae538583ad60069f50bef27c3" alt="Shoes" /></figure>
                     <div className="card-body text-center text-black mt-5">
                         <h2 className=" text-2xl font-serif ">Standard</h2>
@@ -23,7 +23,7 @@ const Extra = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card card-compact w-96 bg-teal-100 shadow-xl">
+                <div className="card card-compact  bg-teal-100 shadow-xl">
                     <figure><img className="" src="https://img.freepik.com/free-photo/health-beautiful-female-body-peace_1139-721.jpg?w=900&t=st=1686468670~exp=1686469270~hmac=7f246dabaec4940b2caaa54bf0a5f7b0f9ed641f0a5ce7e2140aca978041a904" alt="Shoes" /></figure>
                     <div className="card-body text-center text-black mt-5">
                         <h2 className=" text-2xl font-serif ">Professional</h2>
@@ -36,7 +36,7 @@ const Extra = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card card-compact w-96 bg-teal-100 shadow-xl">
+                <div className="card card-compact  bg-teal-100 shadow-xl">
                     <figure><img className="" src="https://img.freepik.com/free-photo/young-blonde-woman-sportswear-is-meditating-yoga-mat-with-closed-eyes-recording_1268-17254.jpg?w=900&t=st=1686468812~exp=1686469412~hmac=ca39e61ebdaea307f04365457b89907b93e9d390bcfe82829164c35c01f8f6a4" alt="Shoes" /></figure>
                     <div className="card-body text-center text-black mt-5">
                         <h2 className=" text-2xl font-serif ">Private</h2>
