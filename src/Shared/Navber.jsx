@@ -16,8 +16,8 @@ const Navber = () => {
 
     const navOptions = <>
         <li className="text-lg font-bold hover:text-green-500"><Link to='/'>Home</Link></li>
-        <li className="text-lg font-bold hover:text-green-500"><Link to=''>Instructors</Link></li>
-        <li className="text-lg font-bold hover:text-green-500"><Link to=''>Classes</Link></li>
+        <li className="text-lg font-bold hover:text-green-500"><Link to='instructor'>Instructors</Link></li>
+        <li className="text-lg font-bold hover:text-green-500"><Link to='class'>Classes</Link></li>
         <li className="text-lg font-bold hover:text-green-500"><Link to=''>DashBoard</Link></li>
 
     </>
@@ -33,7 +33,7 @@ const Navber = () => {
                     </div>
                     <Link to='/' className="font-bold text-4xl uppercase text-teal-500">Y<span className="text-purple-800">o</span>gastic</Link>
                 </div>
-                <div className="navbar-end hidden lg:flex">
+                <div className="navbar-end hidden lg:flex ">
                     <ul className=" ml-32 gap-4 menu-horizontal px-1">
                         {navOptions}
                     </ul>
