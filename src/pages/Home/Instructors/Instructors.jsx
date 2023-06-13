@@ -5,7 +5,7 @@ import InstructorCard from './InstructorCard';
 const Instructors = () => {
     const [instructors, setInstructors] = useState([])
     useEffect(() => {
-        fetch('instructor.json')
+        fetch('http://localhost:5000/instructor')
             .then(res => res.json())
             .then(data => setInstructors(data))
             .catch(error => console.log(error))
