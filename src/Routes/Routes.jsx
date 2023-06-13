@@ -8,6 +8,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import Error from "../Shared/Error";
 import AllClass from "../pages/Class/AllClass";
 import AllInstructors from "../pages/Instructors/AllInstructors";
+import PrivateRoute from "./PrivateRoute";
 
  export const router = createBrowserRouter([
     {
@@ -33,7 +34,7 @@ import AllInstructors from "../pages/Instructors/AllInstructors";
         },
         {
           path: "/class",
-          element: <AllClass></AllClass>
+          element: <PrivateRoute><AllClass></AllClass></PrivateRoute>
         },
       ]
     },

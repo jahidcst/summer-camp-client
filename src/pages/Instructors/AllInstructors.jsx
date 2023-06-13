@@ -10,6 +10,7 @@ const AllInstructors = () => {
       .then(res => res.json())
       .then(data => setInstructor(data))
       .catch(error => console.log(error));
+      
   }, []);
 
   return (
@@ -17,6 +18,7 @@ const AllInstructors = () => {
          <Helmet>
                 <title>Yogastic | Instructor</title>
             </Helmet>
+            <h2 className="text-4xl font-serif text-center my-8 underline  text-emerald-400">Our  Instructors : {instructor.length}</h2>
       <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-10">
         {instructor.map(({ img, classname, email, teachername }) => (
          <div key={classname} className="card w-80  shadow-xl">
