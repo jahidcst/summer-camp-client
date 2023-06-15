@@ -4,7 +4,7 @@ const AdminHome = () => {
   return (
     <div>
       <Helmet>
-        <title>LanguageLab-AdminHome</title>
+        <title>Language Center-AdminHome</title>
       </Helmet>
       <h1>Admin home</h1>
     </div>

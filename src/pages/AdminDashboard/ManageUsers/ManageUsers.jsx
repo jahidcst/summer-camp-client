@@ -43,7 +43,7 @@ const ManageUsers = () => {
   return (
     <div>
        <Helmet>
-        <title>LanguageLab-ManageUsers</title>
+        <title>Language Center-ManageUsers</title>
       </Helmet>
       <div className="w-10/12 mx-auto">
       <h1 className="text-5xl font-semibold text-center my-16">Manage Users</h1>

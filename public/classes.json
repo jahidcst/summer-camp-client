@@ -2,8 +2,8 @@
     {
         "_id": "64833eb73799ca6d33709296",
         "name": "Spoken English",
-        "instructorName": "Manik Sarker",
-        "instructorEmail": "maniksarker652@gmail.com",
+        "instructorName": "Jahid hasan",
+        "instructorEmail": "jahidhasan@gmail.com",
         "availableSeat": 45,
         "price": 100,
         "image": "https://i.ibb.co/GcmvvV4/spoken-english-classes.webp",
@@ -14,8 +14,8 @@
     {
         "_id": "64833ec73799ca6d33709297",
         "name": "Learn Spanish Language ",
-        "instructorName": "Manik Sarker",
-        "instructorEmail": "maniksarker652@gmail.com",
+        "instructorName": "Jahid hasan",
+        "instructorEmail": "jahidhasan@gmail.com",
         "availableSeat": 10,
         "price": 200,
         "image": "https://i.ibb.co/TPwVy8C/istockphoto-494161718-612x612.jpg",
@@ -25,8 +25,8 @@
     {
         "_id": "64834a9364f1718dd5bbb690",
         "name": "German Language and Grammar",
-        "instructorName": "Manik Sarker",
-        "instructorEmail": "maniksarker652@gmail.com",
+        "instructorName": "Jahid hasan",
+        "instructorEmail": "jahidhasan@gmail.com",
         "availableSeat": 10,
         "price": 300,
         "image": "https://i.ibb.co/9bdL8bg/Learning-german.jpg",

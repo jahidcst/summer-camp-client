@@ -15,7 +15,7 @@ const Classes = () => {
     return (
         <div className="p-4 lg:p-0">
             <Helmet>
-        <title>LanguageLab-Classes</title>
+        <title>Language Center-Classes</title>
       </Helmet>
            <div className="text-center mt-16">
             <p className="font-bold text-primary">Explore Our All Approved Classes</p>

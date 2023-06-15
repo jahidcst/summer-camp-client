@@ -19,7 +19,7 @@ const Payment = () => {
   return (
     <div>
       <Helmet>
-        <title>LanguageLab-Payment</title>
+        <title>Language Center-Payment</title>
       </Helmet>
       <h1 className="mt-20 text-center font-semibold text-4xl ">Make Payment</h1>
       <Elements stripe={stripePromise}>

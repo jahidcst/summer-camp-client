@@ -38,7 +38,7 @@ const MyClasses = () => {
     <div>
      
        <Helmet>
-        <title>LanguageLab-MyClasses</title>
+        <title>Language Center-MyClasses</title>
       </Helmet>
       <h1 className="text-5xl font-semibold text-center my-16">My Classes</h1>
      {

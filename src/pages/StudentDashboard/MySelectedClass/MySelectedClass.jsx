@@ -62,7 +62,7 @@ const MySelectedClass = () => {
   return (
     <div>
       <Helmet>
-        <title>LanguageLab-MySelectedClasses</title>
+        <title>Language Center-MySelectedClasses</title>
       </Helmet>
       <h1 className="text-4xl font-bold text-center mt-20">
         My Selected Classes

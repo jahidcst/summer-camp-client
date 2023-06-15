@@ -57,7 +57,7 @@ const AddAClass = () => {
   return (
     <div>
        <Helmet>
-        <title>LanguageLab-Add Class</title>
+        <title>Language Center-Add Class</title>
       </Helmet>
       <h1 className="text-5xl font-semibold my-16 text-center">Add A Class</h1>
       <form

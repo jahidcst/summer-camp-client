@@ -66,7 +66,7 @@ const ManageClasses = () => {
   return (
     <div>
       <Helmet>
-        <title>LanguageLab-ManageClasses</title>
+        <title>Language Center-ManageClasses</title>
       </Helmet>
       <div className="w-10/12 mx-auto">
       <h1 className="text-5xl font-semibold text-center my-16">

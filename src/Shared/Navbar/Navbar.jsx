@@ -105,9 +105,9 @@ const Navbar = () => {
             <div>
               <h3 className="lg:text-2xl uppercase flex items-center gap-2 font-semibold">
                 {" "}
-                <FaGraduationCap className="text-4xl text-[#FF7350] " />
+                <FaGraduationCap className="text-4xl text-teal-400" />
                 <span className="text-secondary hidden lg:block ">Language</span>{" "}
-                <span className="text-primary hidden lg:block">Lab</span>
+                <span className="text-purple-600 hidden lg:block">Center</span>
               </h3>
             </div>
           </Link>

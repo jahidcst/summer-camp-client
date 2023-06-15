@@ -13,7 +13,7 @@ const Instructors = () => {
   return (
     <div className="p-4 lg:p-0">
       <Helmet>
-        <title>LanguageLab-Instructors</title>
+        <title>Language Center-Instructors</title>
       </Helmet>
 
       <div className="text-center  mt-20 ">

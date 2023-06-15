@@ -26,7 +26,7 @@ const MyEnrolledClass = () => {
   return (
     <div>
       <Helmet>
-        <title>LanguageLab-Enrolled Classes</title>
+        <title>Language Center-Enrolled Classes</title>
       </Helmet>
       <h1 className="text-center font-semibold text-4xl mt-20">
         My Enroll Classes

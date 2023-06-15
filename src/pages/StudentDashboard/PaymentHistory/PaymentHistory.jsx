@@ -25,7 +25,7 @@ const PaymentHistory = () => {
   return (
     <div>
       <Helmet>
-        <title>LanguageLab-PaymentHistory</title>
+        <title>Language Center-PaymentHistory</title>
       </Helmet>
      <h1 className="text-center font-semibold text-4xl mt-20">
         Payment History
