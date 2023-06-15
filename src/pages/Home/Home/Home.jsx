@@ -11,9 +11,9 @@ const Home = () => {
         <title>Language Center-Home</title>
       </Helmet>
      <Banner></Banner>
-     <AboutSection/>
      <PopularClasses/>
      <TopInstructors/>
+     <AboutSection/>
     </div>
   );
 };

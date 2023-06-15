@@ -1,5 +1,4 @@
 import img1 from "../../../assets/about/aboutImg1.jpg";
-import img2 from "../../../assets/about/aboutImg2.png";
 import { FaGraduationCap } from "react-icons/fa";
 
 const AboutSection = () => {
@@ -8,23 +7,12 @@ const AboutSection = () => {
       <div className="lg:flex px-4 lg:px-0 space-y-4 lg:space-y-0 gap-8">
         <div className="lg:w-3/12">
           <img
-            className="rounded-2xl border-4 h-full border-[#FF7350]"
+            className="rounded-2xl ml-20 border-4 h-full border-[#FF7350]"
             src={img1}
             alt=""
           />
         </div>
-        <div className="lg:w-3/12 text-center text-white">
-          <div className="bg-teal-400 py-8 border-b-4 mb-4 border-[#125875] rounded-2xl">
-            <h2 className="text-6xl font-bold">15+</h2>
-            <p className="text-2xl font-bold">Year Of Experience</p>
-          </div>
-          <img
-            className="rounded-2xl border-4 border-[#125875]"
-            src={img2}
-            alt=""
-          />
-        </div>
-        <div className="lg:w-6/12">
+        <div className="w-full ml-24">
           <p className="font-bold text-xl flex items-center gap-2 text-[#FF7350]">
            <FaGraduationCap className="text-2xl"/> About Our Language Center
           </p>
