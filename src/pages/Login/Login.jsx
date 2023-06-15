@@ -1,127 +1,129 @@
-import { useContext, useState } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaGoogle, FaFacebook, FaTwitter, FaRegEyeSlash, FaRegEye } from 'react-icons/fa';
-import { Helmet } from "react-helmet-async";
-import Swal from "sweetalert2";
-
-
+import loginImg from "../../assets/login/login.jpg";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
+import { FaEye } from "react-icons/fa";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import useAuth from "../../Hooks/UseAuth";
+// const navigate = useNavigate();
+// const location = useLocation();
+// const from = location.state?.from?.pathname || '/';
 
 const Login = () => {
-    const [passwordType, setPasswordType] = useState("password");
-    const [passwordInput, setPasswordInput] = useState("");
-    const handlePasswordChange = (evnt) => {
-        setPasswordInput(evnt.target.value);
-    }
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const { logIn ,setLoading} = useAuth();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
+  const handleLogin = (data) => {
+    setError("");
+    setSuccess("");
+    console.log(data.email, data.password);
+    logIn(data.email, data.password)
+      .then((result) => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        setSuccess("User Login Successfully");
+        reset();
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
+        setLoading(false)
+      });
+  };
 
-    const { signIn, google } = useContext(AuthContext)
-
-    const navigate = useNavigate()
-    const location = useLocation()
-
-    const handleLogin = event => {
-        event.preventDefault();
-        const form = event.target;
-        const email = form.email.value;
-        const password = form.password.value;
-        console.log(email, password)
-        signIn(email, password)
-            .then(result => {
-                const user = result.user;
-                console.log(user)
-                Swal.fire({
-                    position: 'top-center',
-                    icon: 'success',
-                    title: 'Login Successfully',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-                navigate(location?.state?.from.pathname || '/')
-            })
-            .catch(error => console.log(error))
-
-        form.reset();
-    }
-
-    const togglePassword = () => {
-        if (passwordType === "password") {
-            setPasswordType("text")
-            return;
-        }
-        setPasswordType("password")
-    }
-
-    const handleGoogle = () => {
-        google()
-            .then(result => {
-                const googleUser = result.user;
-                console.log(googleUser)
-                navigate(location?.state?.from.pathname || '/')
-            })
-            .catch(error => {
-                console.log(error.message)
-            })
-    }
-
-    return (
-        <div>
-
-            <Helmet>
-                <title>Yogastic | Login</title>
-            </Helmet>
-
-
-            <div className="  bg-base-200" >
-                <div className="hero-content flex-col">
-
-                    <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100 ">
-                        <div className="card-body">
-                            <div className="text-center ">
-                                <h1 className="text-3xl font-bold pb-5">Login</h1>
-                            </div>
-                            <form onSubmit={handleLogin}>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text text-lg">Email</span>
-                                    </label>
-                                    <input type="text" placeholder="email" name="email" className="input input-bordered" />
-                                </div>
-
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text text-lg">Password</span>
-                                    </label>
-                                    <div className="flex border rounded-md border-slate-600"> 
-                                        <input type={passwordType} name="password" onChange={handlePasswordChange} value={passwordInput} placeholder="password"  className="input w-full"  />
-                                        <div className="">
-                                        <button className="input-md " onClick={togglePassword}>
-                                                {passwordType === "password" ? <FaRegEye></FaRegEye>  : <FaRegEyeSlash></FaRegEyeSlash>  }
-                                            </button>
-                                        </div>
-                                        </div>
-
-                                </div>
-                                <div className="form-control mt-6">
-                                    <input className="btn btn-primary" type="submit" value="Login" />
-                                </div>
-                                <div>
-                                    <div className="divider">OR</div>
-                                    <p className=" text-center">Login With</p>
-                                    <div className="flex gap-24 ml-16 mt-7 text-2xl">
-                                        <button><p><FaFacebook /></p></button>
-                                        <button onClick={handleGoogle}><p><FaGoogle /></p></button>
-                                        <button><p><FaTwitter /></p></button>
-                                    </div>
-                                </div>
-                            </form>
-                            <p className="my-4 text-center">New to Yogastic? <Link className="text-blue-600 font-bold" to='/signup'>Sign Up</Link></p>
-                        </div>
-                    </div>
+  //states
+  const [showPassword, setShowPassword] = useState(false);
+  return (
+    <div className="container">
+      <div className="hero mt-4 lg:mt-16">
+        <div className="hero-content flex-col lg:flex-row gap-24">
+          <div className="text-center shadow-2xl lg:w-1/2">
+            <img src={loginImg} alt="" />
+          </div>
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl lg:w-1/2 bg-base-100">
+            <div className="card-body">
+              <h1 className="text-3xl text-center text-primary font-bold">
+                Login
+              </h1>
+              <form onSubmit={handleSubmit(handleLogin)}>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Email</span>
+                  </label>
+                  <input
+                    {...register("email", {
+                      required: true,
+                    })}
+                    type="email"
+                    placeholder="email"
+                    className="input input-bordered"
+                  />
+                  {errors.email && (
+                    <span className="text-red-600">Email is required</span>
+                  )}
                 </div>
+                <div className="form-control">
+                  <label className="label relative">
+                    <span className="label-text">Password</span>
+                    <span
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute right-4 top-[55px] cursor-pointer"
+                    >
+                      <FaEye />
+                    </span>
+                  </label>
+                  <input
+                    {...register("password", {
+                      required: true,
+                      maxLength: 30,
+                    })}
+                    type={showPassword ? "text" : "password"}
+                    placeholder="password"
+                    className="input input-bordered"
+                  />
+                  {errors.password?.type === "required" && (
+                    <p className="text-red-600">Password is required</p>
+                  )}
+                  <label className="label">
+                    <a href="#" className="label-text-alt link link-hover">
+                      Forgot password?
+                    </a>
+                  </label>
+                </div>
+                {error && <p className="text-red-600">{error}</p>}
+                {success && <p className="text-green-600">{success}</p>}
+                <div className="form-control mt-6">
+                  <input
+                    className="primary-btn py-2 cursor-pointer"
+                    type="submit"
+                    value="Login"
+                  />
+                </div>
+              </form>
+              <p className="text-center mb-4">
+                New to Language Lab?
+                <Link to="/signUp" className="text-primary font-bold">
+                  SignUp
+                </Link>
+              </p>
+              <SocialLogin />
             </div>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Login;

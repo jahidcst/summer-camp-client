@@ -1,139 +1,210 @@
-import { useContext } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaGoogle, FaFacebook, FaTwitter } from 'react-icons/fa';
-import { AuthContext } from "../../Provider/AuthProvider";
-import { Helmet } from "react-helmet-async";
+import { Link, useNavigate } from "react-router-dom";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
+import { useState } from "react";
+import loginImg from "../../assets/login/login.jpg";
+import { FaEye } from "react-icons/fa";
 import { useForm } from "react-hook-form";
+import useAuth from "../../Hooks/UseAuth";
 import Swal from "sweetalert2";
 
-
-
-
-
 const SignUp = () => {
-
-    const { reset, register, handleSubmit, formState: { errors } } = useForm();
-
-    const { createUser, google, updateUser } = useContext(AuthContext)
-    const navigate = useNavigate()
-    const location = useLocation()
-
-    const onSubmit = data => {
-
-        createUser(data.email, data.password,)
-            .then(result => {
-                const user = result.user;
-                updateUser(result.user, data.name, data.photo)
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  // const {signUp,updateUserProfile} = useAuth();
+  const {signUp,updateUserProfile} = useAuth();
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const handleSignUp = (data) => {
+    setError("");
+    setSuccess("");
+    // console.log(data)
+    if (data.password !== data.confirmPassword) {
+      return setError("Password not match");
+    }
+    signUp(data.email,data.password)
+    .then(result =>{
+        const createdUser =result.user;
+        console.log(createdUser)
+        setSuccess('User Created Successfully')
+        updateUserProfile(data.name,data.photoURL)
+        .then(() => {
+          const savedUser = {name:data.name, email:data.email, photoUrl:data.photoURL, role:'student'}
+          fetch("http://localhost:5000/users",{
+            method:'POST',
+            headers:{'content-type':'application/json'},
+            body:JSON.stringify(savedUser)
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.insertedId) {
+                reset();
                 Swal.fire({
-                    position: 'top-center',
-                    icon: 'success',
-                    title: 'User Created Successfully',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-                console.log(user)
-                navigate(location?.state?.from.pathname || '/')
-            })
+                  position: "top-center",
+                  icon: "success",
+                  title: "User Created Successfully.Now Login Please!",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+                navigate("/");
+              }
+            });
+        })
+        .catch((error) => console.log(error));
+    })
+    .catch(error=>{
+        const errorMessage = error.errorMessage;
+        console.log(errorMessage)
+        setError(errorMessage)
+    })
 
-            .catch(error => console.log(error))
-        reset();
-
-    }
-
-    const handleGoogle = () => {
-        google()
-            .then(result => {
-                const googleUser = result.user;
-                console.log(googleUser)
-                navigate(location?.state?.from.pathname || '/')
-            })
-            .catch(error => {
-                console.log(error.message)
-            })
-    }
-
-
-
-    return (
-        <>
-
-            <Helmet>
-                <title>Yogastic | Sign Up</title>
-            </Helmet>
-
-
-
-
-            <div className="bg-base-200">
-                <div className="hero-content flex-col">
-
-                    <div className="card flex-shrink-0 w-full max-w-xl shadow-2xl bg-base-100 ">
-                        <div className="card-body">
-                            <div className="text-center ">
-                                <h1 className="text-3xl font-bold pb-5">Sign Up</h1>
-                            </div>
-                            <form onSubmit={handleSubmit(onSubmit)}>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Name</span>
-                                    </label>
-                                    <input type="text" {...register("name", { required: true })} placeholder="name" name="name" className="input input-bordered" />
-                                    {errors.name && <span className="text-error">Name is required</span>}
-                                </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Photo Url</span>
-                                    </label>
-                                    <input type="text" {...register("photo", { required: true })} placeholder="photo url" name="photo" className="input input-bordered" />
-                                    {errors.name && <span className="text-error">Photo is required</span>}
-
-                                </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Email</span>
-                                    </label>
-                                    <input type="text"  {...register("email", { required: true })} placeholder="email" name="email" className="input input-bordered" />
-                                    {errors.name && <span className="text-error">Email is required</span>}
-
-                                </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Password</span>
-                                    </label>
-                                    <input type="password"  {...register("password", {
-                                        required: true,
-                                        minLength: 6,
-                                        maxLength: 20,
-                                        pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
-                                    })} name="password" placeholder="password" className="input input-bordered" />
-                                    {errors.password?.type === 'required' && <p className="text-error">Password is required</p>}
-                                    {errors.password?.type === 'minLength' && <p className="text-error">Password must be 6 characters</p>}
-                                    {errors.password?.type === 'pattern' && <p className="text-error">Password must have one uppercase, one lowercase and one spacial character</p>}
-
-                                    <label className="label">
-                                        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                    </label>
-                                </div>
-                                <div className="form-control mt-6">
-                                    <input className="btn btn-primary" type="submit" value="Sign Up" />
-                                </div>
-                                <div>
-                                    <div className="divider">OR</div>
-                                    <p className=" text-center">SignUp With</p>
-                                    <div className="flex gap-24 ml-32 mt-7 text-2xl">
-                                        <button><p><FaFacebook /></p></button>
-                                        <button onClick={handleGoogle}><p><FaGoogle /></p></button>
-                                        <button><p><FaTwitter /></p></button>
-                                    </div>
-                                </div>
-                            </form>
-                            <p className="my-4 text-center">Already Have an account? <Link className="text-blue-600 font-bold" to='/login'>Login</Link></p>
-                        </div>
-                    </div>
+  };
+  return (
+    <div className="container">
+      <div className="hero mt-4 lg:mt-16">
+        <div className="hero-content flex-col lg:flex-row gap-24">
+          <div className="text-center shadow-2xl lg:w-1/2">
+            <img src={loginImg} alt="" />
+          </div>
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl lg:w-1/2 bg-base-100">
+            <div className="card-body">
+              <h1 className="text-3xl text-center text-primary font-bold">
+                SignUp
+              </h1>
+              <form onSubmit={handleSubmit(handleSignUp)}>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Name</span>
+                  </label>
+                  <input
+                    {...register("name", { required: true })}
+                    type="text"
+                    placeholder="Your Name"
+                    className="input input-bordered"
+                  />
+                  {errors.name && (
+                    <span className="text-red-600">Name is required</span>
+                  )}
                 </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Email</span>
+                  </label>
+                  <input
+                    {...register("email", { required: true })}
+                    type="text"
+                    placeholder="Your Email"
+                    className="input input-bordered"
+                  />
+                  {errors.email && (
+                    <span className="text-red-600">Email is required</span>
+                  )}
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Photo URL</span>
+                  </label>
+                  <input
+                    {...register("photoURL", { required: true })}
+                    type="url"
+                    placeholder="Photo URL"
+                    className="input input-bordered"
+                  />
+                  {errors.photoURL && (
+                    <span className="text-red-600">photoURL is required</span>
+                  )}
+                </div>
+                <div className="form-control">
+                  <label className="label relative">
+                    <span className="label-text">Password</span>
+                    <span
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute right-4  top-[55px] cursor-pointer"
+                    >
+                      <FaEye />
+                    </span>
+                  </label>
+                  <input
+                    {...register("password", {
+                      required: true,
+                      minLength: 6,
+                      maxLength: 20,
+                      pattern:
+                        /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
+                    })}
+                    type={showPassword ? "text" : "password"}
+                    placeholder="password"
+                    className="input input-bordered"
+                  />
+                  {errors.password?.type === "required" && (
+                    <p className="text-red-600">Password is required</p>
+                  )}
+                  {errors.password?.type === "minLength" && (
+                    <p className="text-red-600">Password must be 6 character</p>
+                  )}
+                  {errors.password?.type === "maxLength" && (
+                    <p className="text-red-600">
+                      Password must be less then 20 character
+                    </p>
+                  )}
+                  {errors.password?.type === "pattern" && (
+                    <p className="text-red-600">
+                      Password must have one Uppercase one lower case, one
+                      number and one special character.
+                    </p>
+                  )}
+                </div>
+                <div className="form-control">
+                  <label className="label relative">
+                    <span className="label-text">Confirm Password</span>
+                    <span
+                      onClick={() =>
+                        setShowConfirmPassword(!showConfirmPassword)
+                      }
+                      className="absolute right-4  top-[55px] cursor-pointer"
+                    >
+                      <FaEye />
+                    </span>
+                  </label>
+                  <input
+                    {...register("confirmPassword", { required: true })}
+                    type={showConfirmPassword ? "text" : "password"}
+                    placeholder="Confirm Password"
+                    className="input input-bordered"
+                  />
+                  {errors.confirmPassword?.type === "required" && (
+                    <p className="text-red-600">Confirm Password is required</p>
+                  )}
+                </div>
+                {error && <p className="text-red-600">{error}</p>}
+                {success && <p className="text-green-600">{success}</p>}
+                <div className="form-control mt-6">
+                  <input
+                    className="primary-btn py-2 cursor-pointer"
+                    type="submit"
+                    value="SignUp"
+                  />
+                </div>
+              </form>
+              <p className="text-center mb-4">
+                Already Have an Account?
+                <Link to="/login" className="text-primary font-bold">
+                  Login
+                </Link>
+              </p>
+              <SocialLogin />
             </div>
-        </>
-    );
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default SignUp;

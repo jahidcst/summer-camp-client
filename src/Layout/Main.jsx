@@ -1,18 +1,17 @@
 import { Outlet } from "react-router-dom";
-import Footer from "../Shared/Footer";
-import Navber from "../Shared/Navber";
-
+import Navbar from "../Shared/Navbar/Navbar";
+import Footer from "../Shared/Footer/Footer";
 
 const Main = () => {
-    return (
-        <div>
-            <Navber></Navber>
-            <div className="min-h-[100px]">
-                <Outlet></Outlet>
-            </div>
-            <Footer></Footer>
-        </div>
-    );
+  return (
+    <div>
+      <Navbar></Navbar>
+      <div className="max-w-screen-xl mx-auto">
+      <Outlet></Outlet>
+      </div>
+      <Footer/>
+    </div>
+  );
 };
 
 export default Main;

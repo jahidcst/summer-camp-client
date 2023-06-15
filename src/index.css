@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "Lato", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.primary-btn {
+  @apply bg-[#FF7350] text-white font-semibold  rounded-md  hover:bg-[#125875] duration-500 transition;
+}
+.active {
+  @apply font-semibold text-xl tracking-wide text-[#FF7350] transition-colors duration-200 hover:text-[#125875];
+}
+
+.default {
+  @apply font-semibold tracking-wide text-xl text-gray-700 transition-colors duration-200 hover:text-[#FF7350];
+}
+.text-secondary{
+  @apply text-[#125875]
+}
+.text-primary{
+  @apply text-[#FF7350]
+}
+
+.container{
+  @apply max-w-screen-xl mx-auto
+}
+
+
+/* @media (max-width: 500px) {
+  .drawer{
+    grid: none !important;
+  }
+} */
