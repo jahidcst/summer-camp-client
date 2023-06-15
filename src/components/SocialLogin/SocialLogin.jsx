@@ -15,7 +15,7 @@ const SocialLogin = () => {
         console.log(loggedInUser);
         
         axios
-          .post("http://localhost:5000/users", {
+          .post("https://summer-vacetion-server-jahidcst.vercel.app/users", {
             name: loggedInUser.displayName,
             email: loggedInUser.email,
             photoUrl: loggedInUser.photoURL,
