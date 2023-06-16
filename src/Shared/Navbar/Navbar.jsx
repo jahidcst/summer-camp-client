@@ -74,7 +74,7 @@ const Navbar = () => {
     return <LoadingSpinner />;
   }
   return (
-    <div className="bg-white">
+    <div className="bg-teal-100">
       <div className="navbar container">
         <div className="navbar-start">
           <div className="dropdown">
@@ -145,7 +145,7 @@ const Navbar = () => {
               {user.photoURL ? (
                 <img
                   title={user?.displayName}
-                  className="w-8 h-8 rounded-full mr-4 cursor-pointer"
+                  className="w-12 h-10 rounded-full mr-4 cursor-pointer"
                   src={user?.photoURL}
                 ></img>
               ) : (

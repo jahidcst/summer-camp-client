@@ -20,7 +20,7 @@ const AboutSection = () => {
             A Few Words About the Language Center
           </h3>
           <p className="text-[#125875] text-xl font-semibold">
-            The Language Lab is an innovative and comprehensive online platform
+            The Language Center is an innovative and comprehensive online platform
             designed to deliver exceptional foreign language courses. Our
             website is dedicated to providing a top-notch language learning
             experience for individuals seeking to enhance their linguistic

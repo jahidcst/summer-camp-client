@@ -112,7 +112,7 @@ const Login = () => {
                 </div>
               </form>
               <p className="text-center mb-4">
-                New to Language Lab?
+                New to Language Center?
                 <Link to="/signUp" className="text-primary font-bold">
                   SignUp
                 </Link>

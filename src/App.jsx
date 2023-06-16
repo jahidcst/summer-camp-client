@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-        <h1>this is language lab</h1>
+        <h1>this is Language Center</h1>
         <button className="btn">Button</button>
 <button className="btn btn-neutral">Neutral</button>
 <button className="btn btn-primary">Button</button>
